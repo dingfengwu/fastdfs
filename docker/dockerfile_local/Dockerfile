@@ -28,7 +28,7 @@ RUN mkdir /home/dfs   \
   &&  ./make.sh && ./make.sh install  \
   &&  cd ../  \
   &&  cd fastdfs/   \
-  &&  sed -i -e 's/\r$//'  \
+  &&  sed -i -e 's/\r$//' ./make.sh  \
   &&  ./make.sh && ./make.sh install  \
   &&  cd ../  \
   &&  cd nginx-1.15.4/  \
