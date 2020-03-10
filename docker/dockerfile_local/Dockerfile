@@ -18,14 +18,17 @@ ADD source/fastdfs.tar.gz /usr/local/src/
 ADD source/fastdfs-nginx-module.tar.gz /usr/local/src/
 ADD source/nginx-1.15.4.tar.gz /usr/local/src/
 
-# Run
-RUN yum install gcc gcc-c++ make automake autoconf libtool make pcre pcre-devel zlib zlib-devel openssl-devel perl libevent wget vim git tar -y \
-  &&  mkdir /home/dfs   \
+# install
+RUN yum install gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel perl libevent wget vim git tar -y 
+
+# config
+RUN mkdir /home/dfs   \
   &&  cd /usr/local/src/  \
   &&  cd libfastcommon/   \
   &&  ./make.sh && ./make.sh install  \
   &&  cd ../  \
   &&  cd fastdfs/   \
+  &&  sed -i -e 's/\r$//'  \
   &&  ./make.sh && ./make.sh install  \
   &&  cd ../  \
   &&  cd nginx-1.15.4/  \
