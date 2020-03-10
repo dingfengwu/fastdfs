@@ -22,10 +22,6 @@ ADD source/nginx-1.15.4.tar.gz /usr/local/src/
 RUN yum install git tar gcc gcc-c++ make automake autoconf libtool pcre pcre-devel zlib zlib-devel openssl-devel wget vim -y \
   &&  mkdir /home/dfs   \
   &&  cd /usr/local/src/  \
-  &&  tar -zxvf nginx-1.15.4.tar.gz  \
-  &&  tar -zxvf libfastcommon.tar.gz  \
-  &&  tar -zxvf fastdfs-nginx-module.tar.gz  \
-  &&  tar -zxvf fastdfs.tar.gz  \
   &&  cd libfastcommon/   \
   &&  ./make.sh && ./make.sh install  \
   &&  cd ../  \
