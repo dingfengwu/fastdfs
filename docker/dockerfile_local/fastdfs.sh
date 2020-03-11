@@ -15,10 +15,10 @@ mv /usr/local/nginx/conf/nginx.conf /usr/local/nginx/conf/nginx.conf.t
 cp /etc/fdfs/nginx.conf /usr/local/nginx/conf
 
 echo "start trackerd"
-/etc/init.d/fdfs_trackerd start
+/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf
 
 echo "start storage"
-/etc/init.d/fdfs_storaged start
+/usr/bin/fdfs_storaged /etc/fdfs/storage.conf
 
 echo "start nginx"
 /usr/local/nginx/sbin/nginx 
